@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>화학 전산역학적 계산</title>
+	<style type="text/css">
+		*{
+			font-size: 20px;
+		}
+		.grid{
+			display: grid;
+			grid-template-columns: 200px 200px;
+		}
+		.grid>div{
+			border: 1px solid black;
+			padding: 5px;
+			text-align: center;
+		}
+		.temp1{
+			border-bottom: 1px solid black;
+			padding: 5px;
+		}
+		input[type=number]{
+			width: 150px;
+			text-align: right;
+		}
+		.boxline{
+			border: 1px solid black;
+			width: 600px;
+		}
+		canvas{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	반응 방향 : <select name="order" form="myForm">
+	    <option value="가역반응">가역 반응</option>
+	    <option value="비가역반응">비가역 반응</option>
+	</select> <button onclick="start()">실행</button> <button onclick="quit()">종료</button><br><br>
+	화학반응식 : <input type="text" name="화학반응식" value="A+2B <-> 3C+4D+12E" onchange="get2()"><br><br>
+	<div class="grid">
+		<div id="a">
+			<div class="temp1">반응물</div>
+		</div>
+		<div id="b">
+			<div class="temp1">생성물</div>
+		</div>
+	</div><br>
+	<div>상수</div>
+	<div class="boxline">
+		평형상수 : <input type="number" name="평형상수" value="1"><br>
+		k=-v/(Q-K) : <input type="number" name="상수" value="0.02">
+	</div>
+	<div>종속변수</div>
+	<div class="boxline">
+	반응속도 : <input type="number" name="반응속도" value="0" style="width: 270px;"><br>
+	반응지수 : <input type="number" name="반응지수" value="0">M<br>
+	반응물의 총 몰농도 : <input type="number" name="반몰" value="0">M<br>
+	생성물의 총 몰농도 : <input type="number" name="생몰" value="0">M
+	</div>
+	<br><br>
+	<canvas width="300px" height="300px"></canvas>
+	<script type="text/javascript" src="chemical.js"></script>
+</body>
+</html>
