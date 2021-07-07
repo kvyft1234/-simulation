@@ -34,7 +34,7 @@ function get2(){
 	생성물 = 화학반응식[1].split("+").map(i=>divide(i));
 	let dcf = document.querySelectorAll('div.chemicalFormula');
 	Array.from(dcf).slice(0,document.querySelectorAll("#a>div").length-1).map(function(i){get1('#a').removeChild(i)});
-	Array.from(dcf).slice(document.querySelectorAll("#a>div").length-1,this.length).map(function(i){get1('#b').removeChild(i)});
+	Array.from(dcf).slice(document.querySelectorAll("#a>div").length-1,Array.from(dcf).length).map(function(i){get1('#b').removeChild(i)});
 	for(let i=0; i<반응물.length; i++){
 		let divElement = document.createElement("div");
 		let text1 = document.createTextNode(반응물[i][1]+" : ");
