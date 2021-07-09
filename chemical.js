@@ -112,7 +112,9 @@ function update(){
 	for(let i = 0; i<b.length; i++){
 		b[i].value = 생성물[i][2];
 	}
-	
+	point[0].push([time,반몰]);
+point[1].push([time,생몰]);
+draw();
 }
 
 var go;
