@@ -65,6 +65,7 @@ function get2(){
 		divElement.appendChild(text2);
 		get1("#b").appendChild(divElement);
 	}
+alert(반응물,생성물);
 }
 get2();
 
