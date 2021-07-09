@@ -72,15 +72,17 @@ function line(x1,y1,x2,y2){
 	ctx.beginPath();
 	ctx.moveTo(x1,y1);
 	ctx.lineTo(x2,y2);
+ctx.stroke();
 	ctx.closePath();
 }
 
 function draw(){
 	for(let j=0; j<2; j++){
 		for(let i=0; i<point.length-1; i++){
-			line(point[j][i][0],point[j][i][1],point[j][i+1][0],point[j][i+1][1]);
+			line(point[j][i][0],300-50*point[j][i][1],point[j][i+1][0],300-50*point[j][i+1][1]);
 		}
 	}
+}
 
 function update(){
 	time += 0.03;
