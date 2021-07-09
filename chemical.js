@@ -117,7 +117,6 @@ function update(){
 	point[0].push([time,반몰]);
 point[1].push([time,생몰]);
 draw();
-if(time%1<0.7)alert(point);
 }
 
 var go;
