@@ -15,6 +15,8 @@ function arraySupply(arr){
 var 화학반응식, 반응속도, 상수, 평형상수, 반응지수, 반몰, 생몰;
 var 반응물, 생성물;
 var 가역여부;
+var time=0;
+var point=[[],[]];
 
 var ctx = get1('canvas').getContext('2d');
 
@@ -66,7 +68,22 @@ function get2(){
 }
 get2();
 
+function line(x1,y1,x2,y2){
+	ctx.beginPath();
+	ctx.moveTo(x1,y1);
+	ctx.lineTo(x2,y2);
+	ctx.closePath();
+}
+
+function draw(){
+	for(let j=0; j<2; j++){
+		for(let i=0; i<point.length-1; i++){
+			line(point[j][i][0],point[j][i][1],point[j][i+1][0],point[j][i+1][1]);
+		}
+	}
+
 function update(){
+	time += 0.03;
 	평형상수 = Number(get1('[name=평형상수]').value);
 	상수 = Number(get1('[name=상수]').value);
 	let a = document.querySelectorAll('#a>div.chemicalFormula>input');
@@ -95,9 +112,7 @@ function update(){
 	for(let i = 0; i<b.length; i++){
 		b[i].value = 생성물[i][2];
 	}
-	ctx.clearRect(0,0,300,300);
-	ctx.fillRect(95,250-반몰*100,10,반몰*100);
-	ctx.fillRect(195,250-생몰*100,10,생몰*100);
+	
 }
 
 var go;
