@@ -79,7 +79,7 @@ ctx.stroke();
 function draw(){
 	for(let j=0; j<2; j++){
 		for(let i=0; i<point.length-1; i++){
-			line(point[j][i][0],300-50*point[j][i][1],point[j][i+1][0],300-50*point[j][i+1][1]);
+			line(30*point[j][i][0],300-50*point[j][i][1],30*point[j][i+1][0],300-50*point[j][i+1][1]);
 		}
 	}
 }
